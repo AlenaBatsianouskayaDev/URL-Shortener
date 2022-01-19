@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UrlShortener</title>
+</head>
+<body>
+  <h1>URL Shortener</h1>
+    <form >
+      <label for="fullUrl">Enter long url</label>
+      <input 
+        type="url"
+        name="fullUrl" 
+        id="fullUrl">
+  
+      <button 
+        type="submit">Get short URL
+      </button>
+    </form>
+  
+    <div class="dialogBox__outputField" >
+      <% shortUrls.forEach(shortUrl => { %>
+        <span class="outputField__text"> <%=shortUrl.short%> </span>
+      <% }) %>
+    </div>
+  </div>
+  
+</body>
+</html>
