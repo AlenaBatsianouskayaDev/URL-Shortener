@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonService } from './services/common.service';
 import { HttpService } from './services/http.service';
 import { AppComponent } from './app.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
@@ -30,7 +29,6 @@ import { HttpInterceptorService } from './interceptors/http-interceptor.service'
     HttpClientModule,
   ],
   providers: [
-    CommonService, 
     HttpService,
     {provide: HTTP_INTERCEPTORS, 
       useClass: HttpInterceptorService, 

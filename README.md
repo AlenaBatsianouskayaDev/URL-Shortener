@@ -1,27 +1,16 @@
-# url-shortener
+URL Shortener 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Tech Stack: Node.js, Express, MongoDB, Angular, Material Angular
 
-## Development server
+Running:
+● SPA consists from back-end and front-end parts and opens in differents ports. 
+● To install the server locally open back-end folder and run `npm install`. For starting server run `npm start` there. 
+● To install UI locally open root folder and run `npm install`. For starting UI run `npm start` there. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Requirements:
+● SPA with an input dialogue box that will take the URL, a submit button and an area to display the shortened URL.
+● After clicking on the submit button send request to the server, where store long url, generate short url and Id. At once user see short url in display.
+● If user has copied url and pasted it into browser’s search bar, app searches for the slug in database and redirects user to the corresponding original url.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

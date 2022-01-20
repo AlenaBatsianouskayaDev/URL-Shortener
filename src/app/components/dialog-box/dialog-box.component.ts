@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpService } from 'src/app/services/http.service';
-import { IUrl } from './../../utils/interfaces';
+import { IUrl } from '../../interfaces/interfaces';
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
