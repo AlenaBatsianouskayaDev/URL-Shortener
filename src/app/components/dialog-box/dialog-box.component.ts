@@ -1,6 +1,6 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
-import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
-
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { HttpService } from 'src/app/services/http.service';
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
@@ -11,7 +11,9 @@ export class DialogBoxComponent implements OnInit {
   public inputControl: FormControl = new FormControl();
   public shortUrl: string | null = '';
 
-  constructor() { }
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   ngOnInit(): void { 
   
@@ -19,5 +21,11 @@ export class DialogBoxComponent implements OnInit {
 
   onSubmit(inputValue: string) {
     this.shortUrl = inputValue;
+    this.httpService.postShortUrl(inputValue)
+                .subscribe(
+                    (data: any) => {
+                      console.log(data);
+                      this.shortUrl = data.shortUrl;},
+                );
   }
 }
