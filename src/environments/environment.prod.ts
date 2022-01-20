@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: "https://url-shortener-back.herokuapp.com/"
+  API_URL: "https://url-shortener-back.herokuapp.com"
 };
