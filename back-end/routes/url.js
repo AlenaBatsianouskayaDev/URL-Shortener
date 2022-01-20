@@ -15,7 +15,6 @@ router.post('/shorten', async (req, res) => {
   }
   const urlCode = shortid.generate();
 
-  console.log(longUrl);
   if (validUrl.isUri(longUrl)) {
     try {
       let url = await Url.findOne({ longUrl });
@@ -29,7 +28,6 @@ router.post('/shorten', async (req, res) => {
           longUrl,
           shortUrl,
           urlCode,
-          date: new Date(),
         });
 
         await url.save();

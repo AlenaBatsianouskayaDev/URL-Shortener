@@ -1,31 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpService } from 'src/app/services/http.service';
+import { IUrl } from './../../utils/interfaces';
 @Component({
   selector: 'app-dialog-box',
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.scss'],
 })
-export class DialogBoxComponent implements OnInit {
+export class DialogBoxComponent {
 
   public inputControl: FormControl = new FormControl();
-  public shortUrl: string | null = '';
+  public shortUrl: string = '';
 
   constructor(
     private httpService: HttpService
   ) { }
 
-  ngOnInit(): void { 
-  
-  }
-
-  onSubmit(inputValue: string) {
-    this.shortUrl = inputValue;
-    this.httpService.postShortUrl(inputValue)
-                .subscribe(
-                    (data: any) => {
-                      console.log(data);
-                      this.shortUrl = data.shortUrl;},
-                );
+  public onSubmit(inputValue: string): void {
+    this.httpService.getShortUrl(inputValue)
+      .subscribe((data: IUrl) => {
+        this.shortUrl = data.shortUrl;
+      },
+    );
   }
 }

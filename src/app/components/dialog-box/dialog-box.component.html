@@ -1,4 +1,6 @@
 <div class="dialogBox">
+  <h1 class="dialogBox__title">URL Shortener</h1>
+
   <form 
     (ngSubmit)="onSubmit(inputControl.value)"
     class="dialogBox__inputForm">
@@ -19,13 +21,10 @@
   </mat-form-field>
 
     <button 
-      mat-raised-button 
-      color="primary"
+      mat-stroked-button 
       class="dialogBox__btnSubmit">Get short URL
     </button>
   </form>
 
-  <div class="dialogBox__outputField">
-    <span class="outputField__text">{{shortUrl}}</span>
-  </div>
+  <mat-card class="outputField">{{shortUrl}}</mat-card>
 </div>

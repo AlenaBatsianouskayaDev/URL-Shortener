@@ -1,22 +1,22 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { IUrl } from "../utils/interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class HttpService {
-  private API_URL = 'http://localhost:5000/api/url';
+
+  private API_URL = environment.API_URL;
   
-  constructor( private _http: HttpClient,  private _router: Router) { }
+  constructor( 
+    private _http: HttpClient
+  ) { }
 
-  public postShortUrl(longUrl: string): Observable<string> {
-    return this._http.post<any>(`${this.API_URL}/shorten`, {longUrl})
+  public getShortUrl(longUrl: string): Observable<IUrl> {
+    return this._http.post<IUrl>(`${this.API_URL}/shorten`, {longUrl})
   }
-
-  // public loginUser(user: IRequestData): Observable<IAccessData> {
-  //   return this._http.post<IAccessData>(`${this.API_URL}/login`, user)
-  // }
 }
